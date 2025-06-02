@@ -43,7 +43,7 @@ const login = async (req, res) => {
                     user_id: user.dataValues.user_id,
                     profil_type: user.dataValues.profil_type
                 }, privateKey, {expiresIn: '24h'})
-                const msg = `L'utilisateur ${user.prenom} ${user.nom} est connecter avec succees`
+                const msg = `L'utilisateur ${user.prenom} ${user.nom} est connecté avec succees`
                 res.json({msg, user, token})
             } else {
                 const msg = `Mot de passe incorrect`
@@ -85,7 +85,7 @@ const reset = async (req, res) => {
             }
         })
         if (!user) {
-            const msg = `l'utilisateur n'existe pas!`
+            const msg = `l'utilisateur n'existe pas`
             return res.status(404).json({msg})
         } else {
             try {
